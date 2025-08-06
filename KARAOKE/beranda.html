@@ -62,7 +62,7 @@
       <nav class="py-6 px-2">
         <ul class="space-y-1">
           <li>
-            <a href="#" class="flex items-center px-4 py-3 rounded-lg text-white bg-yellow-400 bg-opacity-20 hover:bg-yellow-400 hover:text-gray-900 font-semibold transition">
+            <a href="#" class="flex items-center px-4 py-3 rounded-lg text-black-200 hover:bg-yellow-400 hover:text-gray-900 transition">
               <svg class="w-6 h-6 mr-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6"/>
               </svg>
@@ -70,7 +70,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="flex items-center px-4 py-3 rounded-lg text-gray-200 hover:bg-yellow-400 hover:text-gray-900 transition">
+            <a href="#" class="flex items-center px-4 py-3 rounded-lg text-black-200 hover:bg-yellow-400 hover:text-gray-900 transition">
               <svg class="w-6 h-6 mr-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M9 19V6h13M9 6l-7 7 7 7"/>
               </svg>
@@ -81,7 +81,6 @@
       </nav>
     </aside>
 
-    <!-- Main Content -->
     <!-- Main Content -->
 <main class="flex-1 bg-[#121212] text-white p-6 space-y-10">
 
@@ -103,45 +102,90 @@
   </section>
 
   <!-- Filter Buttons -->
-  <div class="flex flex-wrap gap-2">
-    <button class="px-4 py-1 bg-white/10 rounded-full text-sm hover:bg-white/20">All</button>
-    <button class="px-4 py-1 bg-white/10 rounded-full text-sm hover:bg-white/20">Music</button>
-    <button class="px-4 py-1 bg-white/10 rounded-full text-sm hover:bg-white/20">Podcasts</button>
-  </div>
+ <div class="flex flex-wrap gap-2">
+  <button class="px-4 py-1 bg-white/10 rounded-full text-sm text-black border border-yellow-400 hover:bg-yellow-400 hover:text-black transition duration-300">
+    All
+  </button>
+  <button class="px-4 py-1 bg-white/10 rounded-full text-sm text-black border border-yellow-400 hover:bg-yellow-400 hover:text-black transition duration-300">
+    Music
+  </button>
+</div>
 
   <!-- Grid Playlists -->
   <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
-    <div class="bg-[#1e1e1e] p-4 rounded-lg hover:bg-[#2a2a2a] transition">
-      <img src="https://i.scdn.co/image/ab67616d00001e02861a9cd48c75f7b7f55a0c57" class="rounded mb-3">
-      <h3 class="font-semibold">DArkSide Radio</h3>
-    </div>
-    <div class="bg-[#1e1e1e] p-4 rounded-lg hover:bg-[#2a2a2a] transition">
-      <img src="https://i.scdn.co/image/ab67616d00001e0224bdeaa491c99f21c3a14b6c" class="rounded mb-3">
-      <h3 class="font-semibold">夜に聴きたいR&B</h3>
-    </div>
-    <div class="bg-[#1e1e1e] p-4 rounded-lg hover:bg-[#2a2a2a] transition">
-      <img src="https://i.scdn.co/image/ab67616d00001e027c9c9ef5a23b4a6312a7b775" class="rounded mb-3">
-      <h3 class="font-semibold">DEJAVU</h3>
-    </div>
-    <div class="bg-[#1e1e1e] p-4 rounded-lg hover:bg-[#2a2a2a] transition">
-      <img src="https://i.scdn.co/image/ab67616d00001e02bfa0cb0cb9ac9205e435c327" class="rounded mb-3">
-      <h3 class="font-semibold">Bring Me The Horizon</h3>
-    </div>
-  </section>
-
-  <!-- New Release -->
-  <section class="space-y-4">
-    <h2 class="text-2xl font-bold">New release from <span class="text-yellow-400">Fujii Kaze</span></h2>
-    <div class="bg-[#1e1e1e] p-4 rounded-lg flex items-center space-x-4 hover:bg-[#2a2a2a] transition">
-      <img src="https://i.scdn.co/image/ab67616d0000b2735c348e3b38e0a0e7b77dd64b" class="w-20 h-20 rounded">
-      <div>
-        <p class="text-lg font-semibold">Love Like This</p>
-        <p class="text-sm text-white/70">Single • Fujii Kaze</p>
+  <!-- Card -->
+  <div class="group relative bg-[#fefefe] p-4 rounded-lg border border-[#d1d1d1] hover:border-yellow-400 hover:shadow-lg transition duration-200">
+    <img src="https://i.scdn.co/image/ab67616d00001e02861a9cd48c75f7b7f55a0c57" class="rounded mb-3 w-full aspect-square object-cover">
+    <h3 class="font-semibold text-black">DArkSide Radio</h3>
+    
+    <!-- Play Icon -->
+    <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition duration-200">
+      <div class="bg-yellow-400 p-2 rounded-full shadow-lg">
+        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M6 4l10 6-10 6V4z" />
+        </svg>
       </div>
     </div>
-  </section>
+  </div>
 
-</main>
+  <!-- Duplicate the same structure for each card -->
+  <div class="group relative bg-[#fefefe] p-4 rounded-lg border border-[#d1d1d1] hover:border-yellow-400 hover:shadow-lg transition duration-200">
+    <img src="https://i.scdn.co/image/ab67616d00001e0224bdeaa491c99f21c3a14b6c" class="rounded mb-3 w-full aspect-square object-cover">
+    <h3 class="font-semibold text-black">夜に聴きたいR&B</h3>
+    <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition duration-200">
+      <div class="bg-yellow-400 p-2 rounded-full shadow-lg">
+        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M6 4l10 6-10 6V4z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="group relative bg-[#fefefe] p-4 rounded-lg border border-[#d1d1d1] hover:border-yellow-400 hover:shadow-lg transition duration-200">
+    <img src="https://i.scdn.co/image/ab67616d00001e027c9c9ef5a23b4a6312a7b775" class="rounded mb-3 w-full aspect-square object-cover">
+    <h3 class="font-semibold text-black">DEJAVU</h3>
+    <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition duration-200">
+      <div class="bg-yellow-400 p-2 rounded-full shadow-lg">
+        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M6 4l10 6-10 6V4z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="group relative bg-[#fefefe] p-4 rounded-lg border border-[#d1d1d1] hover:border-yellow-400 hover:shadow-lg transition duration-200">
+    <img src="https://i.scdn.co/image/ab67616d00001e02bfa0cb0cb9ac9205e435c327" class="rounded mb-3 w-full aspect-square object-cover">
+    <h3 class="font-semibold text-black">Bring Me The Horizon</h3>
+    <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition duration-200">
+      <div class="bg-yellow-400 p-2 rounded-full shadow-lg">
+        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M6 4l10 6-10 6V4z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- New Release -->
+<section class="space-y-4 mt-10">
+  <h2 class="text-2xl text-black font-bold">New release from <span class="text-yellow-400">Fujii Kaze</span></h2>
+  <div class="group relative bg-[#fefefe] p-4 rounded-lg border border-[#d1d1d1] hover:border-yellow-400 hover:shadow-lg transition duration-200">
+    <img src="https://i.scdn.co/image/ab67616d0000b2735c348e3b38e0a0e7b77dd64b" class="rounded mb-3 w-full aspect-square object-cover">
+    <div>
+      <p class="text-lg text-black font-semibold">Love Like This</p>
+      <p class="text-sm text-black/70">Single • Fujii Kaze</p>
+    </div>
+    <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition duration-200">
+      <div class="bg-yellow-400 p-2 rounded-full shadow-lg">
+        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M6 4l10 6-10 6V4z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
   <!-- Script -->
