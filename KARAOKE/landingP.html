@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KaraokeStream - Landing Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-700 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between px-6 py-4 bg-gray-900 bg-opacity-80 shadow-lg">
+    <div class="flex items-center space-x-2">
+      <div class="bg-yellow-400 rounded-full p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6h13M9 6l-7 7 7 7"/>
+        </svg>
+      </div>
+      <span class="text-2xl font-extrabold text-yellow-400 tracking-wide">KaraokeStream</span>
+    </div>
+    <div>
+      <a href="index.html" class="bg-yellow-400 text-black font-bold px-5 py-2 rounded-lg shadow hover:bg-yellow-300 transition">Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col-reverse md:flex-row items-center justify-between flex-1 px-6 md:px-16 py-12 md:py-24">
+    <div class="w-full md:w-1/2 text-center md:text-left mt-10 md:mt-0">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white drop-shadow mb-4 leading-tight">
+        Karaoke Online <span class="text-yellow-300">Mudah & Seru</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-100 mb-8 max-w-lg">
+        Nikmati pengalaman karaoke bersama teman dan keluarga di mana saja, kapan saja. Pilih lagu favoritmu, nyanyikan, dan bagikan momen seru!
+      </p>
+      <a href="index.html" class="inline-block bg-yellow-400 text-black font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-yellow-300 transition text-lg">
+        Mulai Karaoke
+      </a>
+    </div>
+    <div class="w-full md:w-1/2 flex justify-center">
+      <img src="https://img.freepik.com/free-vector/karaoke-party-concept-illustration_114360-7872.jpg?w=700" alt="Karaoke Illustration" class="w-80 md:w-[28rem] rounded-2xl shadow-2xl border-4 border-yellow-300">
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="px-6 md:px-16 py-12 bg-gray-900 bg-opacity-80 rounded-t-3xl shadow-2xl">
+    <h2 class="text-2xl md:text-3xl font-bold text-yellow-400 text-center mb-10">Fitur Unggulan</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-gray-800 rounded-xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition">
+        <svg class="w-12 h-12 text-yellow-400 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M9 19V6h13M9 6l-7 7 7 7"/>
+        </svg>
+        <h3 class="text-lg font-bold text-white mb-2">Ribuan Lagu</h3>
+        <p class="text-gray-300 text-center">Akses ribuan lagu dari berbagai genre dan bahasa, update setiap minggu.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition">
+        <svg class="w-12 h-12 text-yellow-400 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M8 12l2 2 4-4" />
+        </svg>
+        <h3 class="text-lg font-bold text-white mb-2">Kualitas Audio Jernih</h3>
+        <p class="text-gray-300 text-center">Dengarkan musik dan suara dengan kualitas terbaik tanpa gangguan.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition">
+        <svg class="w-12 h-12 text-yellow-400 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M17 16l4-4m0 0l-4-4m4 4H7" />
+        </svg>
+        <h3 class="text-lg font-bold text-white mb-2">Bisa Bareng Teman</h3>
+        <p class="text-gray-300 text-center">Undang teman, buat room karaoke, dan bernyanyi bersama secara online.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-200 py-6 mt-auto">
+    &copy; 2025 KaraokeStream. All rights reserved.
+  </footer>
+</body>
+</html>
