@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - KaraokeStream</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-700">
+
+  <div class="bg-gray-900 bg-opacity-90 rounded-2xl shadow-2xl p-10 w-full max-w-md relative animate-fadeIn">
+    <div class="flex flex-col items-center mb-6">
+      <div class="bg-yellow-400 rounded-full p-3 mb-2 shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6h13M9 6l-7 7 7 7"/>
+        </svg>
+      </div>
+      <h2 class="text-3xl font-extrabold text-yellow-400 mb-1 tracking-wide drop-shadow">KaraokeStream</h2>
+      <p class="text-gray-300 text-sm">Login untuk mulai karaoke seru!</p>
+    </div>
+    <form id="loginForm" class="space-y-5">
+      <div>
+        <label class="block text-gray-300 mb-2" for="username">Username</label>
+        <input 
+          type="text" 
+          id="username" 
+          name="username" 
+          class="w-full px-4 py-2 rounded-lg border border-yellow-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+          required
+        />
+      </div>
+      <div>
+        <label class="block text-gray-300 mb-2" for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          class="w-full px-4 py-2 rounded-lg border border-yellow-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+          required
+        />
+      </div>
+      <button 
+        type="submit" 
+        class="w-full bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-black font-bold py-2 rounded-lg shadow hover:from-yellow-300 hover:to-yellow-400 transition"
+      >
+        Login
+      </button>
+    </form>
+    <p class="text-gray-300 text-sm mt-8 text-center">
+      Belum punya akun? <a href="register.html" class="text-yellow-400 hover:underline font-semibold transition">Daftar</a>
+    </p>
+  </div>
+
+  <script>
+    // Login redirect
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Validasi login bisa ditambahkan di sini
+      window.location.href = 'user.html';
+    });
+  </script>
+  <style>
+    .animate-fadeIn {
+      animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98);}
+      to { opacity: 1; transform: scale(1);}
+    }
+  </style>
+</body>
+</html>

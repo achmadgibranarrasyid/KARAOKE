@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daftar - KaraokeStream</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-700">
+
+  <div class="bg-gray-900 bg-opacity-90 rounded-2xl shadow-2xl p-10 w-full max-w-md relative animate-fadeIn">
+    <!-- Notifikasi -->
+    <div id="notif" class="hidden mb-4 px-4 py-2 rounded text-sm font-medium"></div>
+
+    <div class="flex flex-col items-center mb-6">
+      <div class="bg-yellow-400 rounded-full p-3 mb-2 shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6h13M9 6l-7 7 7 7"/>
+        </svg>
+      </div>
+      <h2 class="text-3xl font-extrabold text-yellow-400 mb-1 tracking-wide drop-shadow">KaraokeStream</h2>
+      <p class="text-gray-300 text-sm">Daftar akun baru untuk mulai karaoke!</p>
+    </div>
+
+    <form id="registerForm" class="space-y-5">
+      <div>
+        <label class="block text-gray-300 mb-2" for="reg_username">Username</label>
+        <input type="text" id="reg_username" name="reg_username" required
+          class="w-full px-4 py-2 rounded-lg border border-yellow-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition" />
+      </div>
+
+      <div>
+        <label class="block text-gray-300 mb-2" for="reg_email">Email</label>
+        <input type="email" id="reg_email" name="reg_email" required
+          class="w-full px-4 py-2 rounded-lg border border-yellow-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition" />
+      </div>
+
+      <div>
+        <label class="block text-gray-300 mb-2" for="reg_password">Password</label>
+        <input type="password" id="reg_password" name="reg_password" required
+          class="w-full px-4 py-2 rounded-lg border border-yellow-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition" />
+      </div>
+
+      <button type="submit"
+        class="w-full bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-black font-bold py-2 rounded-lg shadow hover:from-yellow-300 hover:to-yellow-400 transition">
+        Daftar
+      </button>
+    </form>
+
+    <p class="text-gray-300 text-sm mt-8 text-center">
+      Sudah punya akun?
+      <a href="login.html" class="text-yellow-400 hover:underline font-semibold transition">Login</a>
+    </p>
+  </div>
+
+  <script>
+    const form = document.getElementById('registerForm');
+    const notif = document.getElementById('notif');
+
+    // Simulasi email yang sudah digunakan
+    const usedEmails = ["user@example.com", "admin@karaoke.com"];
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = form.reg_email.value.trim();
+      const username = form.reg_username.value.trim();
+      const password = form.reg_password.value.trim();
+
+      // Validasi format email
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showNotif("Email tidak valid!", "bg-red-500 text-white");
+        return;
+      }
+
+      // Cek apakah email sudah digunakan
+      if (usedEmails.includes(email.toLowerCase())) {
+        showNotif("Email sudah terdaftar!", "bg-yellow-500 text-gray-900");
+        return;
+      }
+
+      // Jika valid
+      showNotif("Pendaftaran berhasil! Mengarahkan ke login...", "bg-green-500 text-white");
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 1500);
+    });
+
+    function showNotif(message, classes) {
+      notif.textContent = message;
+      notif.className = `block ${classes} mb-4 px-4 py-2 rounded text-sm font-medium`;
+    }
+  </script>
+
+  <style>
+    .animate-fadeIn {
+      animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</body>
+</html>
